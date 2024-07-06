@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>title</title>
+<style>
+    div.link {
+        position: relative;
+    }
+    div.link a {
+        position: relative;
+        z-index: 10;
+        display: block;
+        padding: 10px 0;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    div.link > span {
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #3C3C3C;
+        content: '';
+    }
+    div.link a::after {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        content: '';
+        transform: rotate(-45deg);
+    }
+
+    div.link a:hover {
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="link">
+        <a>トップメッセージ</a><span></span>
+    </div>
+    <script>
+        $('div.link a').on('mouseover', function() {
+            $(this).animate({
+                paddingLeft: 10,
+            }, 300);
+            $('div.link > span').animate({
+                width: '100%',
+            }, 300);
+        });
+        $('div.link a').on('mouseout', function() {
+            $(this).animate({
+                paddingLeft: 0,
+            }, 300);
+            $('div.link > span').animate({
+                width: 0,
+            }, 300);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>title</title>
+<style>
+    footer {
+        font-size: 20px;
+    }
+
+    .upper {
+        position: relative;
+    }
+    .upper::after {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        border-right: 3px solid #000;
+        border-bottom: 3px solid #000;
+        content: '';
+        transform: rotate(45deg);
+    }
+    .upper.open::after {
+        top: 10px;
+        transform: rotate(-135deg);
+        content: '';
+    }
+    .lower {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <footer>
+        <div class="parent">
+            <div class="upper">企業情報</div>
+            <div class="lower">トップメッセージ 役員 企業理念 グループ企業 会社概要・会社案内 数字で見る良品計画​ 所在地 沿革 コーポレート・ガバナンス</div>
+        </div>
+    </footer>
+    <script>
+        $('.upper').on('click', function() {
+            $('.lower').slideToggle(200);
+            $('.upper').toggleClass('open');
+        });
+    </script>
+</body>
+</html>

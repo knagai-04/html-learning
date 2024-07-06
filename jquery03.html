@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<title>title</title>
+<style>
+    section {
+        height: 600px;
+    }
+    section.second * {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <section>
+        <h2>見出し</h2>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    </section>
+    <section class="second">
+        <h2>見出し</h2>
+        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <img src="image/jimoto_made_plus24tobe.jpeg">
+    </section>
+    <script>
+        $(window).scroll(function() {
+            let pos = $('section').offset();
+            let current = $(window).scrollTop();
+            if(100 <= current) {
+                $('section.second *').fadeIn(2000);
+            }
+        });
+    </script>
+</body>
+</html>

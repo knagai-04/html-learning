@@ -1,0 +1,30 @@
+section {
+    max-width: 600px;
+    margin: auto;
+}
+
+.title-en {
+    margin-bottom: 0.5em;
+    font-size: 50px;
+}
+.title-jp {
+    margin-bottom: 2em;
+    text-align: right;
+    font-size: 20px;
+}
+h3 {
+    margin-top: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+.message {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+} 
+.message > div {
+    flex: 1;
+}
